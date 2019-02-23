@@ -19,5 +19,11 @@ public class App
         System.out.println(sdaHotelService.getAllRooms());
         System.out.println("All available Rooms ");
         System.out.println(sdaHotelService.getAvailableRooms());
+
+        sdaHotelService.bookRoom(11);
+        System.out.println(sdaHotelService.getAvailableRooms());
+
+        sdaHotelService.releaseRoom(11);
+        System.out.println(sdaHotelService.getAvailableRooms());
     }
 }

@@ -21,6 +21,14 @@ public class Room {
         return available;
     }
 
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    public int getRoomNumber() {
+        return roomNumber;
+    }
+
     @Override
     public String toString() {
         return "\n"+"Room{" +

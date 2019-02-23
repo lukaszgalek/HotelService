@@ -29,4 +29,32 @@ public class HotelService {
         return availableRooms;
     }
 
+
+    private List<Room> getUnavailableRooms() {
+        List<Room> unavailableRooms = new ArrayList<>();
+        for (Room room : hotel.getRooms()) {
+            if (!room.isAvailable()) {
+                unavailableRooms.add(room);
+            }
+        }
+        return unavailableRooms;
+    }
+
+    public void  bookRoom (int roomNumber){
+
+        for (Room room : getAvailableRooms())
+            if (room.getRoomNumber() == roomNumber) {
+                room.setAvailable(false);
+            }
+    }
+
+    public void  releaseRoom (int roomNumber){
+
+        for (Room room : getUnavailableRooms())
+            if (room.getRoomNumber() == roomNumber) {
+                room.setAvailable(true);
+                break;
+            }
+    }
+
 }
